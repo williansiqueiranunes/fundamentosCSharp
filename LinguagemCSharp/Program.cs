@@ -113,5 +113,40 @@ int valorConvertB = Convert.ToInt16(2.5);
 
 
 
+/* Operações Aritméticas */
+// soma __________ ( + )
+// subtração _____ ( - )
+// multiplicção __ ( * )
+// divisão _______ ( / )
+
+// segue a regra da matemática | 1° ( * e / ) | 2° ( + e - )
+
+
+
+/* Operações de Atribuição */
+int x = 0;
+x += 5; // x = x + 5
+x -= 1; // x = x - 2
+x *= 10; // x = x * 10
+x /= 2; // x = x / 2
+
+
+
+/* Operações de Comparação */
+// igual ___________ ( == )
+// diferente _______ ( != )
+// maior ___________ ( > )
+// menor ___________ ( < )
+// maior ou igual __ ( >= )
+// menor ou igual __ ( <= )
+
+
+
+/* Operadores Lógicos */
+// E / AND ________ ( && )
+// OU / OR ________ ( || )
+// NEGAÇÃO / NOT __ ( ! )
+
+
 
 
