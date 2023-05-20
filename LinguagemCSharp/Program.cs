@@ -149,4 +149,28 @@ x /= 2; // x = x / 2
 
 
 
+/* Condicionais */
+var value = 1;
+
+if (value == 1) {
+    Console.WriteLine("Valor 1");
+} else if (value == 2) {
+    Console.WriteLine("Valor 2");
+} else {
+    Console.WriteLine("Valor Padrao");
+}
+
+
+switch (value)
+{
+    case 1:
+        Console.WriteLine("Valor 1");
+        break;
+    case 2:
+        Console.WriteLine("Valor 2");
+        break;
+    default:
+        Console.WriteLine("Valor Padrao");
+        break;
+}
 
