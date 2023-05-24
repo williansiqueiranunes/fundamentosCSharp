@@ -26,6 +26,8 @@ Console.WriteLine(IDADE_MINIMA);
  * Tipos de variáveis
  * https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/#types-and-variables
  */
+ #pragma warning disable 0219 // desativa aviso variável não utilizada
+
 byte valorByte = 128; // 0 até 255
 sbyte valorByteNegativo = -64; // -128 até 127
 
@@ -124,11 +126,11 @@ int valorConvertB = Convert.ToInt16(2.5);
 
 
 /* Operações de Atribuição */
-int x = 0;
-x += 5; // x = x + 5
-x -= 1; // x = x - 2
-x *= 10; // x = x * 10
-x /= 2; // x = x / 2
+int v = 0;
+v += 5; // x = x + 5
+v -= 1; // x = x - 2
+v *= 10; // x = x * 10
+v /= 2; // x = x / 2
 
 
 
@@ -173,4 +175,107 @@ switch (value)
         Console.WriteLine("Valor Padrao");
         break;
 }
+
+
+
+/* Laços Repetição */
+
+int[] lista = new int[] { 1, 2, 3 };
+
+for (int i = 0; i < lista.Length; i++)
+{
+    Console.WriteLine("Index: " + i + " Valor: " + lista[i]);
+}
+
+foreach (var item in lista)
+{
+    Console.WriteLine("Valor: " + item);
+}
+
+
+int contadorWhile = 0;
+while (contadorWhile < 5)
+{
+    Console.WriteLine("contadorWhile: " + contadorWhile);
+    contadorWhile++;
+}
+
+
+int contadorDoWhile = 0;
+do
+{
+    Console.WriteLine("contadorDoWhile: " + contadorDoWhile);
+    contadorDoWhile++;
+} while (contadorDoWhile < 5);
+
+
+
+
+
+/* Métodos */
+
+static void MeuMetodo(string parametro) // criando o método sem retorno (void)
+{
+    Console.WriteLine(parametro);
+}
+MeuMetodo("Olá Mundo"); // executando o método
+
+
+static string RetornaNomeCompleto(string nome, string sobrenome) // método com retorno
+{
+    return nome + " " + sobrenome;
+}
+Console.WriteLine(RetornaNomeCompleto("Fulano", "De Tal"));
+
+
+
+static string RetornaNomeIdade( // método com parâmetro opcional
+    string nome,
+    int idade = 30 // a idade vai ter 30 como valor padrão
+    // parâmetros opcionais, tem que ser os últimos da lista de parâmetros
+)   
+{
+    return "Meu nome é " + nome + " e tenho " + idade + " anos";
+}
+Console.WriteLine(RetornaNomeIdade("Fulano"));
+Console.WriteLine(RetornaNomeIdade("Fulano", 40));
+
+
+
+
+
+/* Value Types */
+
+// Armazenados na STACK ("Garbage Collector" não tem acesso)
+// Buit-in, structs, enuns
+// O valor será COPIADO
+
+int x = 25;
+int y = x; // Y é uma cópia de X
+Console.WriteLine(x); // 25
+Console.WriteLine(y); // 25
+x = 30;
+Console.WriteLine(x); // 30
+Console.WriteLine(y); // 25
+
+
+
+/* Reference Types */
+
+// Será armazenado na HEAP, a variável tem uma referência para o valor na HEAP
+// Class, Object, Array, ...
+// Quando não existe mais referência, o valor é apagado da HEAP (Garbage Collector passa excluindo)
+
+var arrayA = new string[2];
+arrayA[0] = "Item 1";
+var arrayB = arrayA; // Não copia o conteúdo, só a referência;
+Console.WriteLine(arrayA[0]); // "Item 1"
+Console.WriteLine(arrayB[0]); // "Item 1"
+arrayA[0] = "Item 1 modificado";
+Console.WriteLine(arrayA[0]); // "Item 1 modificado"
+Console.WriteLine(arrayB[0]); // "Item 1 modificado"
+
+
+
+
 
