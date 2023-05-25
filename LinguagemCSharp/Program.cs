@@ -278,4 +278,47 @@ Console.WriteLine(arrayB[0]); // "Item 1 modificado"
 
 
 
+/* Strucs */
+
+// Parecido com uma classe, a direrença que é amarzenada na stack e tem o valor, não uma referência
+// Pode tem propriedade e métodos, pode criar um construtor (não pode ser vazio)
+// Mais informações em: https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/builtin-types/struct
+
+/*
+struct Produto
+{
+    public string Nome;
+    public int Quantidade;
+
+    public string Descricao()
+    {
+        return $"O produto {Nome} tem a quantidade de {Quantidade}.";
+    }
+}
+
+var produto = new Produto();
+produto.Nome = "Tênis";
+produto.Quantidade = 10;
+Console.WriteLine(produto.Descricao());
+*/
+
+
+
+
+/* Enuns*/
+
+// Uma estrutura que retorna um int e melhora a visualização do dado
+// Mais informações em: https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/builtin-types/enum
+
+/*
+enum EStatus {
+    Ativo = 1,
+    Desabilitado = 2,
+    Excluido = 3
+}
+
+var status = EStatus.Ativo;
+Console.WriteLine(status); // Ativo
+Console.WriteLine((int)status); // 1
+*/
 
